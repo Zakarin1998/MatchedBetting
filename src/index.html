@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Betting Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <h1>Betting Calculator</h1>
+  <div class="form-group">
+    <label>Quota 1:</label>
+    <input type="number" id="quota1" step="any" required>
+  </div>
+  <div class="form-group">
+    <label>Stake 1:</label>
+    <input type="number" id="stake1" step="any" required>
+  </div>
+  <div class="form-group">
+    <label>Quota 2:</label>
+    <input type="number" id="quota2" step="any" required>
+  </div>
+  <button class="btn-calculate" onclick="calculateStake2()">Calculate</button>
+  <div class="result" id="result"></div>
+  <div class="match-list" id="matchList"></div>
+  <button class="btn-add-match" onclick="addMatch()">Add Match</button>
+</div>
+
+<script>
+  class Match {
+    constructor(quota1, stake1, quota2) {
+      this.quota1 = quota1;
+      this.stake1 = stake1;
+      this.quota2 = quota2;
+      this.win1 = quota1 * stake1;
+      this.stake2 = this.win1 / quota2;
+      this.win2 = this.stake2 * quota2;
+      this.totalSpent = stake1 + this.stake2;
+      this.loss1 = this.win1 - this.totalSpent;
+      this.loss2 = this.win2 - this.totalSpent;
+    }
+
+    getSummary() {
+      return `
+          <p>WIN 1: ${this.win1.toFixed(2)}</p>
+          <p>STAKE 2: ${this.stake2.toFixed(2)}</p>
+          <p>WIN 2: ${this.win2.toFixed(2)}</p>
+          <p>TOTAL SPENT: ${this.totalSpent.toFixed(2)}</p>
+          <p>LOSS 1: ${this.loss1.toFixed(2)}</p>
+          <p>LOSS 2: ${this.loss2.toFixed(2)}</p>
+        `;
+    }
+  }
+
+  let matches = [];
+  let selectedMatchIndex = -1;
+
+  function calculateStake2() {
+    const quota1 = parseFloat(document.getElementById('quota1').value);
+    const stake1 = parseFloat(document.getElementById('stake1').value);
+    const quota2 = parseFloat(document.getElementById('quota2').value);
+
+    const match = new Match(quota1, stake1, quota2);
+    matches.push(match);
+    selectedMatchIndex = matches.length - 1;
+
+    updateResults();
+    updateMatchList();
+  }
+
+  function updateResults() {
+    const match = matches[selectedMatchIndex];
+    const resultElement = document.getElementById('result');
+    resultElement.innerHTML = `
+        <h3>Results:</h3>
+        ${match.getSummary()}
+      `;
+  }
+
+  function updateMatchList() {
+    const matchListElement = document.getElementById('matchList');
+    matchListElement.innerHTML = '';
+
+    matches.forEach((match, index) => {
+      const matchItem = document.createElement('div');
+      matchItem.classList.add('match-item');
+      matchItem.innerText = `Match ${index + 1}`;
+      matchItem.addEventListener('click', () => selectMatch(index));
+
+      if (index === selectedMatchIndex) {
+        matchItem.classList.add('selected');
+      }
+
+      matchListElement.appendChild(matchItem);
+    });
+  }
+
+  function selectMatch(index) {
+    selectedMatchIndex = index;
+    updateResults();
+    updateMatchList();
+  }
+
+  function addMatch() {
+    selectedMatchIndex = -1;
+    updateResults();
+    updateMatchList();
+  }
+</script>
+</body>
+</html>
