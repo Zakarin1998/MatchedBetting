@@ -8,16 +8,17 @@ import {
   Container,
   Tooltip,
 } from '@chakra-ui/react';
-import { Collapse } from '@chakra-ui/transition';
 import { FiMenu, FiX, FiHome, FiTrendingUp, FiDollarSign, FiList } from 'react-icons/fi';
 import { useTheme as useNextTheme } from 'next-themes';
 import ThemeToggle from '../UI/ThemeToggle';
 
 export default function Navbar() {
-  const { isOpen, onToggle } = React.useDisclosure();
+  const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('#');
   const { theme } = useNextTheme();
   const isDark = theme === 'dark';
+  
+  const toggleMenu = () => setIsOpen(!isOpen);
   
   // Track the active section based on scroll position
   useEffect(() => {
@@ -69,7 +70,7 @@ export default function Navbar() {
       
       // Close mobile menu if open
       if (isOpen) {
-        onToggle();
+        setIsOpen(false);
       }
     } else {
       console.warn(`Section not found: ${href}`);
@@ -147,7 +148,7 @@ export default function Navbar() {
             <ThemeToggle />
             <IconButton
               ml={2}
-              onClick={onToggle}
+              onClick={toggleMenu}
               icon={isOpen ? <FiX /> : <FiMenu />}
               variant="ghost"
               aria-label="Toggle Navigation"
@@ -156,8 +157,14 @@ export default function Navbar() {
         </Flex>
 
         {/* Mobile Navigation */}
-        <Collapse in={isOpen} animateOpacity>
-          <Box pb={4} display={{ md: 'none' }}>
+        {isOpen && (
+          <Box
+            pb={4}
+            display={{ md: 'none' }}
+            animate={{ opacity: 1, height: 'auto' }}
+            initial={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
             <Stack as={'nav'} role="navigation" spacing={4}>
               {NAV_ITEMS.map((navItem) => (
                 <Flex
@@ -186,7 +193,7 @@ export default function Navbar() {
               ))}
     </Stack>
           </Box>
-        </Collapse>
+        )}
       </Container>
     </Box>
   );
