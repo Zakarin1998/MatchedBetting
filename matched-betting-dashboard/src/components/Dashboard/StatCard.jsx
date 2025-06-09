@@ -1,10 +1,7 @@
 import React from 'react';
 import {
-  Stat,
-  StatLabel,
-  StatNumber,
-  StatHelpText,
   Box,
+  Text,
 } from '@chakra-ui/react';
 import { useTheme as useNextTheme } from 'next-themes';
 
@@ -50,11 +47,11 @@ const StatCard = ({ label, value, helpText, icon }) => {
         </Box>
       )}
       
-      <Stat>
-        <StatLabel>{label}</StatLabel>
-        <StatNumber>{value}</StatNumber>
-        {helpText && <StatHelpText>{helpText}</StatHelpText>}
-      </Stat>
+      <Box>
+        <Text fontSize="sm" color={isDark ? "gray.400" : "gray.500"}>{label}</Text>
+        <Text fontSize="2xl" fontWeight="bold">{value}</Text>
+        {helpText && <Text fontSize="xs" color={isDark ? "gray.400" : "gray.500"} mt={1}>{helpText}</Text>}
+      </Box>
     </Box>
   );
 };

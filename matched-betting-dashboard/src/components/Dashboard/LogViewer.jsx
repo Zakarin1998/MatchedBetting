@@ -3,12 +3,9 @@ import {
   Box,
   Text,
   Stack,
-  Code,
   Button,
-  Spinner,
   Flex,
 } from '@chakra-ui/react';
-import { FiRefreshCw } from 'react-icons/fi';
 import Card from '../UI/Card';
 import { getLogs } from '../../services/api';
 import { useTheme as useNextTheme } from 'next-themes';
@@ -51,23 +48,24 @@ export default function LogViewer() {
 
   // Parse log level to determine color
   const getLogLevelColor = (logLine) => {
-    if (logLine.includes('[DEBUG]')) return 'blue';
-    if (logLine.includes('[INFO]')) return 'green';
-    if (logLine.includes('[WARNING]')) return 'orange';
-    if (logLine.includes('[ERROR]')) return 'red';
-    if (logLine.includes('[CRITICAL]')) return 'red.600';
-    return 'gray';
+    if (logLine.includes('[DEBUG]')) return isDark ? 'blue.300' : 'blue.500';
+    if (logLine.includes('[INFO]')) return isDark ? 'green.300' : 'green.500';
+    if (logLine.includes('[WARNING]')) return isDark ? 'orange.300' : 'orange.500';
+    if (logLine.includes('[ERROR]')) return isDark ? 'red.300' : 'red.500';
+    if (logLine.includes('[CRITICAL]')) return isDark ? 'red.300' : 'red.600';
+    return isDark ? 'gray.300' : 'gray.500';
   };
 
   const RefreshButton = (
     <Button 
       size="sm" 
       onClick={fetchLogs} 
-      isLoading={isLoading}
-      colorScheme="blackAlpha"
-      leftIcon={<FiRefreshCw />}
+      disabled={isLoading}
+      bg={isDark ? "blue.500" : "gray.800"}
+      color="white"
+      _hover={{ bg: isDark ? "blue.600" : "gray.900" }}
     >
-      Refresh
+      {isLoading ? "Refreshing..." : "Refresh"}
     </Button>
   );
 
@@ -81,7 +79,7 @@ export default function LogViewer() {
     >
       {isLoading && logs.length === 0 ? (
         <Flex justify="center" align="center" py={10}>
-          <Spinner size="xl" color="gray.500" />
+          <Text>Loading logs...</Text>
         </Flex>
       ) : error ? (
         <Text color="red.500">{error}</Text>
@@ -90,7 +88,7 @@ export default function LogViewer() {
       ) : (
         <Stack spacing={1} fontSize="sm" fontFamily="mono">
           {logs.map((log, index) => (
-            <Code
+            <Box
               key={index}
               p={2}
               borderRadius="md"
@@ -98,9 +96,11 @@ export default function LogViewer() {
               bg={bgColor}
               overflowX="auto"
               whiteSpace="pre-wrap"
+              borderLeft="4px solid"
+              borderLeftColor={getLogLevelColor(log)}
             >
               {log}
-            </Code>
+            </Box>
           ))}
         </Stack>
       )}
