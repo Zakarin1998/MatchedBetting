@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import {
   Button,
-  FormControl,
-  FormLabel,
-  Input,
-  Stack,
-  Flex,
-  Spinner,
   Box,
+  Stack,
+  Input,
+  Text,
 } from '@chakra-ui/react';
-import { FiActivity } from 'react-icons/fi'; // Changed from FiCalculator to FiActivity
 import Card from '../UI/Card';
 import { predictMatch, identifyValueBet } from '../../services/api';
 import { useTheme as useNextTheme } from 'next-themes';
@@ -50,18 +46,6 @@ export default function Calculator({ onResultUpdate }) {
     }
   };
 
-  // Show error messages if needed
-  const showError = () => {
-    if (error) {
-      return (
-        <Box mt={4} p={3} bg="red.100" color="red.800" borderRadius="md">
-          {error}
-        </Box>
-      );
-    }
-    return null;
-  };
-
   return (
     <Card 
       id="calculator" 
@@ -70,26 +54,26 @@ export default function Calculator({ onResultUpdate }) {
       subtitle="Enter match details to calculate predictions and value bets"
     >
       <Stack spacing={4}>
-        <FormControl>
-          <FormLabel>Match ID</FormLabel>
+        <Box>
+          <Text fontWeight="bold" mb={2}>Match ID</Text>
           <Input
             value={matchId}
             onChange={(e) => setMatchId(e.target.value)}
             placeholder="e.g. Milan-Inter"
           />
-        </FormControl>
-
-        <FormControl>
-          <FormLabel>Betting Providers</FormLabel>
+        </Box>
+        
+        <Box>
+          <Text fontWeight="bold" mb={2}>Betting Providers</Text>
           <Input
             value={providers}
             onChange={(e) => setProviders(e.target.value)}
             placeholder="Comma-separated list e.g. Bet365,Betfair"
           />
-        </FormControl>
-
-        <FormControl>
-          <FormLabel>Home Win Probability</FormLabel>
+        </Box>
+        
+        <Box>
+          <Text fontWeight="bold" mb={2}>Home Win Probability</Text>
           <Input
             value={homeProb}
             onChange={(e) => setHomeProb(e.target.value)}
@@ -99,21 +83,25 @@ export default function Calculator({ onResultUpdate }) {
             max="1"
             placeholder="Enter probability between 0 and 1"
           />
-        </FormControl>
+        </Box>
         
-        {error && showError()}
+        {error && (
+          <Box mt={4} p={3} bg="red.100" color="red.800" borderRadius="md">
+            {error}
+          </Box>
+        )}
         
-        <Flex justify="flex-end">
+        <Box display="flex" justifyContent="flex-end" mt={4}>
           <Button
-            colorScheme={isDark ? "blue" : "blackAlpha"}
+            bg={isDark ? "blue.500" : "gray.800"}
+            color="white"
             onClick={handleRun}
             isLoading={isLoading}
-            loadingText="Calculating"
-            leftIcon={isLoading ? null : <FiActivity />}
+            _hover={{ bg: isDark ? "blue.600" : "gray.900" }}
           >
-            Run Analysis
+            {isLoading ? "Calculating..." : "Run Analysis"}
           </Button>
-        </Flex>
+        </Box>
       </Stack>
     </Card>
   );
