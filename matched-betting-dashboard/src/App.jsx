@@ -4,8 +4,6 @@ import { ThemeProvider } from 'next-themes'
 import { ErrorBoundary } from 'react-error-boundary'
 import Layout from './components/Layout'
 import Dashboard from './components/Dashboard'
-import theme from './theme'
-
 function ErrorFallback({ error }) {
   return (
     <div style={{ 
@@ -37,7 +35,7 @@ function ErrorFallback({ error }) {
 
 export default function App() {
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider>
       <ThemeProvider attribute="class" defaultTheme="system">
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <Layout>
