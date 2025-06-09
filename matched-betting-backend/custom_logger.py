@@ -41,4 +41,5 @@ def setup_logger(name: str = "betting_app", level: int = logging.DEBUG) -> loggi
         fh.setLevel(level)
         fh.setFormatter(logging.Formatter("[%(levelname)s] %(asctime)s %(name)s - %(message)s", datefmt=datefmt))
         logger.addHandler(fh)
+    
     return logger
