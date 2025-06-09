@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { FiArrowUp } from 'react-icons/fi';
-import { IconButton, Box, useDisclosure } from '@chakra-ui/react';
+import { IconButton, Box } from '@chakra-ui/react';
 import { useTheme as useNextTheme } from 'next-themes';
 
 /**
@@ -8,7 +8,7 @@ import { useTheme as useNextTheme } from 'next-themes';
  * and allows them to quickly return to the top of the page
  */
 const ScrollToTop = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isVisible, setIsVisible] = useState(false);
   const { theme } = useNextTheme();
   const isDark = theme === 'dark';
 
@@ -16,9 +16,9 @@ const ScrollToTop = () => {
     // Show button when user scrolls down 300px
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
-        onOpen();
+        setIsVisible(true);
       } else {
-        onClose();
+        setIsVisible(false);
       }
     };
 
@@ -26,7 +26,7 @@ const ScrollToTop = () => {
 
     // Clean up event listener on component unmount
     return () => window.removeEventListener('scroll', toggleVisibility);
-  }, [onOpen, onClose]);
+  }, []);
 
   // Scroll to top handler
   const scrollToTop = () => {
@@ -45,8 +45,8 @@ const ScrollToTop = () => {
       bottom="4"
       right="4"
       zIndex="10"
-      opacity={isOpen ? 1 : 0}
-      visibility={isOpen ? 'visible' : 'hidden'}
+      opacity={isVisible ? 1 : 0}
+      visibility={isVisible ? 'visible' : 'hidden'}
       transition="opacity 0.3s, visibility 0.3s"
     >
       <IconButton

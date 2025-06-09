@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChakraProvider, defaultSystem } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import { ThemeProvider } from 'next-themes'
 import { ErrorBoundary } from 'react-error-boundary'
 import Layout from './components/Layout'
@@ -37,7 +37,7 @@ function ErrorFallback({ error }) {
 
 export default function App() {
   return (
-    <ChakraProvider theme={theme} value={defaultSystem}>
+    <ChakraProvider theme={theme}>
       <ThemeProvider attribute="class" defaultTheme="system">
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <Layout>

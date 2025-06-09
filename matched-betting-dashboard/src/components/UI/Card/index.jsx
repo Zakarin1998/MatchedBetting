@@ -3,7 +3,6 @@ import {
   Box,
   Heading,
   Text,
-  Divider,
 } from '@chakra-ui/react';
 import { useTheme as useNextTheme } from 'next-themes';
 
@@ -57,7 +56,7 @@ export const Card = ({
             </Box>
             {headerRight && <Box>{headerRight}</Box>}
           </Box>
-          <Divider />
+          <Box height="1px" bg={borderColor} width="100%" />
         </>
       )}
       
@@ -67,7 +66,7 @@ export const Card = ({
       
       {footer && (
         <>
-          <Divider />
+          <Box height="1px" bg={borderColor} width="100%" />
           <Box p={4}>
             {footer}
           </Box>
