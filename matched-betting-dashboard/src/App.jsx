@@ -1,9 +1,8 @@
-import React from 'react'
-import { ChakraProvider } from '@chakra-ui/react'
-import { ThemeProvider } from 'next-themes'
+import React, { useState, useEffect } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
-import Layout from './components/Layout'
-import Dashboard from './components/Dashboard'
+import SimpleLayout from './components/SimpleLayout'
+import SimpleDashboard from './components/SimpleDashboard'
+
 function ErrorFallback({ error }) {
   return (
     <div style={{ 
@@ -34,15 +33,37 @@ function ErrorFallback({ error }) {
 }
 
 export default function App() {
+  // Theme handling
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') || 'light';
+    }
+    return 'light';
+  });
+
+  useEffect(() => {
+    // Update the class on the html element when theme changes
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+    } else {
+      document.documentElement.classList.add('light');
+      document.documentElement.classList.remove('dark');
+    }
+
+    // Save to localStorage
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+  };
+
   return (
-    <ChakraProvider>
-      <ThemeProvider attribute="class" defaultTheme="system">
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <Layout>
-            <Dashboard />
-          </Layout>
+      <SimpleLayout theme={theme} toggleTheme={toggleTheme}>
+        <SimpleDashboard theme={theme} />
+      </SimpleLayout>
         </ErrorBoundary>
-      </ThemeProvider>
-    </ChakraProvider>
   )
 }

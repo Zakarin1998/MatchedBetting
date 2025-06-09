@@ -1,3 +1,34 @@
 [INFO] 2025-06-09 02:31:12 matched_betting_api - === Starting Matched Betting API Server ===
 [INFO] 2025-06-09 02:31:12 matched_betting_api - === Starting Matched Betting API Server ===
 [INFO] 2025-06-09 02:31:12 matched_betting_api - === Starting Matched Betting API Server ===
+[INFO] 2025-06-09 04:29:48 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:29:48 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:29:48 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:29:48 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:30:06 matched_betting_api - Request to predict match: Milan-Inter
+[INFO] 2025-06-09 04:30:06 matched_betting_api - Using providers: ['Bet365', 'Betfair']
+[INFO] 2025-06-09 04:30:06 matched_betting_api - [predict_match] Inizio flusso per 'Milan-Inter'
+[INFO] 2025-06-09 04:30:07 matched_betting_api - Outcome predetto: HomeWin
+[INFO] 2025-06-09 04:30:07 matched_betting_api - Request to identify value bet: Milan-Inter
+[INFO] 2025-06-09 04:30:07 matched_betting_api - [identify_value_bet] Cercando value bet per Milan-Inter
+[INFO] 2025-06-09 04:30:18 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:30:19 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:32:19 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:32:19 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:32:27 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:32:27 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:32:31 matched_betting_api - Request to predict match: Milan-Inter
+[INFO] 2025-06-09 04:32:31 matched_betting_api - Using providers: ['Bet365', 'Betfair']
+[INFO] 2025-06-09 04:32:31 matched_betting_api - [predict_match] Inizio flusso per 'Milan-Inter'
+[INFO] 2025-06-09 04:32:31 matched_betting_api - Outcome predetto: HomeWin
+[INFO] 2025-06-09 04:32:31 matched_betting_api - Request to identify value bet: Milan-Inter
+[INFO] 2025-06-09 04:32:31 matched_betting_api - [identify_value_bet] Cercando value bet per Milan-Inter
+[INFO] 2025-06-09 04:32:49 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:32:49 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:32:57 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:33:19 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:33:19 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:33:27 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:33:58 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:34:08 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 04:34:08 matched_betting_api - Request for logs, lines=20
