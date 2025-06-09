@@ -1,0 +1,127 @@
+[INFO] 2025-06-09 12:13:55 matched_betting_api - === Starting Matched Betting API Server ===
+[INFO] 2025-06-09 12:14:07 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:14:07 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:14:11 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:14:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:14:37 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:14:55 matched_betting_api - Request to predict match: Milan-Inter
+[INFO] 2025-06-09 12:14:55 matched_betting_api - Using providers: ['Bet365', 'Betfair']
+[INFO] 2025-06-09 12:14:55 matched_betting_api - [predict_match] Inizio flusso per 'Milan-Inter'
+[INFO] 2025-06-09 12:14:55 matched_betting_api - Outcome predetto: HomeWin
+[INFO] 2025-06-09 12:14:55 matched_betting_api - Request to identify value bet: Milan-Inter
+[INFO] 2025-06-09 12:14:55 matched_betting_api - [identify_value_bet] Cercando value bet per Milan-Inter
+[INFO] 2025-06-09 12:15:07 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:15:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:15:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:15:37 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:16:07 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:16:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:16:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:16:37 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:17:07 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:17:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:17:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:17:37 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:18:07 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:18:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:18:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:19:08 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:19:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:19:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:20:09 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:20:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:20:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:21:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:21:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:22:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:22:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:23:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:23:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:24:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:24:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:25:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:25:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:26:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:26:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:27:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:27:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:28:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:28:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:29:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:29:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:30:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:30:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:31:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:31:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:32:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:32:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:33:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:33:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:33:23 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:33:23 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:33:31 matched_betting_api - Request to predict match: Milan-Inter
+[INFO] 2025-06-09 12:33:31 matched_betting_api - Using providers: ['Bet365', 'Betfair']
+[INFO] 2025-06-09 12:33:31 matched_betting_api - [predict_match] Inizio flusso per 'Milan-Inter'
+[INFO] 2025-06-09 12:33:31 matched_betting_api - Outcome predetto: HomeWin
+[INFO] 2025-06-09 12:33:31 matched_betting_api - Request to identify value bet: Milan-Inter
+[INFO] 2025-06-09 12:33:31 matched_betting_api - [identify_value_bet] Cercando value bet per Milan-Inter
+[INFO] 2025-06-09 12:33:54 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:34:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:34:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:34:24 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:34:54 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:35:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:35:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:35:24 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:35:54 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:36:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:36:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:36:24 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:36:54 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:37:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:37:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:37:55 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:38:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:38:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:38:56 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:39:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:39:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:39:57 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:40:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:40:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:40:58 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:41:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:41:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:41:59 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:42:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:42:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:43:00 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:43:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:43:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:44:01 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:44:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:44:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:45:02 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:45:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:45:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:46:03 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:46:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:46:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:47:04 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:47:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:47:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:48:05 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:48:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:48:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:49:06 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:49:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:49:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:50:07 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:50:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:50:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:51:08 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:51:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:51:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:52:09 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:52:12 matched_betting_api - Request for logs, lines=20
+[INFO] 2025-06-09 12:52:12 matched_betting_api - Request for logs, lines=20
