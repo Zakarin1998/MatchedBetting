@@ -1,6 +1,6 @@
 import pandas as pd
 
-# --- MOCK FETCH FUNCTIONS ---
+
 def fetch_opta_data(match_id: str) -> pd.DataFrame:
     """
     Mock dei dati statistici Opta.
@@ -12,6 +12,7 @@ def fetch_opta_data(match_id: str) -> pd.DataFrame:
         "opta_away_goals": [1.1],
         "opta_draw_prob": [0.28]
     })
+
 
 def fetch_betting_odds(match_id: str, provider: str) -> pd.DataFrame:
     """
