@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { 
   Stack,
   SimpleGrid,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import { FiActivity, FiBarChart2, FiTrendingUp } from 'react-icons/fi';
 import Calculator from './Calculator';
@@ -13,6 +12,7 @@ import PageHeader from '../UI/PageHeader';
 
 export default function Dashboard() {
   const [result, setResult] = useState(null);
+
   return (
     <Stack spacing={8}>
       {/* Hero Section */}
@@ -20,6 +20,7 @@ export default function Dashboard() {
         title="Matched Betting Dashboard"
         subtitle="Advanced analytics and predictions for value betting opportunities"
       />
+
       {/* Stats Overview */}
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6}>
         <StatCard

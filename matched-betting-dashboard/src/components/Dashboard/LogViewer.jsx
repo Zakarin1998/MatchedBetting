@@ -7,18 +7,23 @@ import {
   Button,
   Spinner,
   Flex,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import { FiRefreshCw } from 'react-icons/fi';
 import Card from '../UI/Card';
 import { getLogs } from '../../services/api';
+import { useTheme as useNextTheme } from 'next-themes';
 
 export default function LogViewer() {
   const [logs, setLogs] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   
-  const bgColor = useColorModeValue('gray.50', 'gray.800');
+  const { theme } = useNextTheme();
+  const isDark = theme === 'dark';
+  
+  // Theme-based colors
+  const bgColor = isDark ? 'gray.800' : 'gray.50';
+
   const fetchLogs = async () => {
     try {
       setIsLoading(true);
@@ -55,20 +60,20 @@ export default function LogViewer() {
   };
 
   const RefreshButton = (
-    <Button
-            size="sm" 
-            onClick={fetchLogs} 
-            isLoading={isLoading}
-            colorScheme="blackAlpha"
+    <Button 
+      size="sm" 
+      onClick={fetchLogs} 
+      isLoading={isLoading}
+      colorScheme="blackAlpha"
       leftIcon={<FiRefreshCw />}
-          >
-            Refresh
-          </Button>
+    >
+      Refresh
+    </Button>
   );
 
   return (
-    <Card
-      id="logs"
+    <Card 
+      id="logs" 
       mt={6}
       title="System Logs"
       subtitle="Recent activity from the backend server"
