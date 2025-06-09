@@ -9,8 +9,8 @@ import {
   Box,
   Text,
   Spinner,
-  useColorModeValue,
 } from '@chakra-ui/react';
+import { useTheme as useNextTheme } from 'next-themes';
 
 /**
  * A reusable data table component
@@ -28,7 +28,11 @@ export const DataTable = ({
   emptyMessage = 'No data available',
   ...props 
 }) => {
-  const headerBg = useColorModeValue('gray.50', 'gray.700');
+  const { theme } = useNextTheme();
+  const isDark = theme === 'dark';
+  
+  // Theme-based colors
+  const headerBg = isDark ? 'gray.700' : 'gray.50';
   
   if (isLoading) {
     return (

@@ -5,8 +5,8 @@ import {
   StatNumber,
   StatHelpText,
   Box,
-  useColorModeValue,
 } from '@chakra-ui/react';
+import { useTheme as useNextTheme } from 'next-themes';
 
 /**
  * A card displaying a single statistic
@@ -18,8 +18,14 @@ import {
  * @param {React.ReactNode} props.icon - Optional icon
  */
 const StatCard = ({ label, value, helpText, icon }) => {
-  const bgColor = useColorModeValue('white', 'gray.800');
-  const borderColor = useColorModeValue('gray.200', 'gray.700');
+  const { theme } = useNextTheme();
+  const isDark = theme === 'dark';
+  
+  // Theme-based colors
+  const bgColor = isDark ? 'gray.800' : 'white';
+  const borderColor = isDark ? 'gray.700' : 'gray.200';
+  const iconBg = isDark ? 'gray.700' : 'gray.100';
+  const iconColor = isDark ? 'gray.200' : 'gray.600';
   
   return (
     <Box
@@ -37,8 +43,8 @@ const StatCard = ({ label, value, helpText, icon }) => {
           mr={4}
           p={2}
           borderRadius="md"
-          bg={useColorModeValue('gray.100', 'gray.700')}
-          color={useColorModeValue('gray.600', 'gray.200')}
+          bg={iconBg}
+          color={iconColor}
         >
           {icon}
         </Box>
