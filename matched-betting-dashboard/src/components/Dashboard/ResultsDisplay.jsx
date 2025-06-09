@@ -3,13 +3,7 @@ import {
   Box,
   Stack,
   Text,
-  Badge,
   Flex,
-  Tag,
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
 } from '@chakra-ui/react';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
@@ -25,13 +19,10 @@ export default function ResultsDisplay({ result }) {
 
   if (!result) {
     return (
-      <Alert status="info" borderRadius="md">
-        <AlertIcon />
-        <AlertTitle>No results yet</AlertTitle>
-        <AlertDescription>
-          Run an analysis using the calculator above to see predictions and value bets.
-        </AlertDescription>
-      </Alert>
+      <Box p={4} bg={isDark ? "blue.900" : "blue.50"} color={isDark ? "blue.200" : "blue.800"} borderRadius="md" mb={6}>
+        <Text fontWeight="bold">No results yet</Text>
+        <Text>Run an analysis using the calculator above to see predictions and value bets.</Text>
+      </Box>
     );
   }
 
@@ -84,32 +75,30 @@ export default function ResultsDisplay({ result }) {
             <Stack spacing={4}>
               <Box>
                 <Text fontWeight="bold" mb={2}>Predicted Outcome</Text>
-                <Badge colorScheme={pred[0] === 'HomeWin' ? 'green' : pred[0] === 'Draw' ? 'yellow' : 'red'} p={2} borderRadius="md">
+                <Box p={2} borderRadius="md" bg={isDark ? "green.800" : "green.100"} color={isDark ? "green.100" : "green.800"} display="inline-block">
                   {pred[0]}
-                </Badge>
+                </Box>
               </Box>
               
               <Box>
                 <Text fontWeight="bold" mb={2}>Possible Scores</Text>
                 <Flex wrap="wrap" gap={2}>
                   {pred[1].map((score, idx) => (
-                    <Tag key={idx} size="md" variant="subtle" colorScheme="gray">
+                    <Box key={idx} p={2} borderRadius="md" bg={isDark ? "gray.700" : "gray.100"} fontSize="sm">
                       {score}
-                    </Tag>
+                    </Box>
                   ))}
                 </Flex>
               </Box>
               
               <Box>
                 <Text fontWeight="bold" mb={2}>Value Bet Recommendation</Text>
-                <Alert status="success" borderRadius="md">
-                  <AlertIcon />
+                <Box p={3} borderRadius="md" bg={isDark ? "green.800" : "green.100"} color={isDark ? "green.100" : "green.800"}>
                   {vb}
-                </Alert>
+                </Box>
               </Box>
             </Stack>
           </Box>
-          
           <Box flex="1" maxH="300px">
             <Text fontWeight="bold" textAlign="center" mb={4}>Outcome Probability Distribution</Text>
             <Box maxW="300px" mx="auto">
