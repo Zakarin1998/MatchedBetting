@@ -9,7 +9,7 @@ import {
   Spinner,
   Box,
 } from '@chakra-ui/react';
-import { FiCalculator } from 'react-icons/fi';
+import { FiActivity } from 'react-icons/fi'; // Changed from FiCalculator to FiActivity
 import Card from '../UI/Card';
 import { predictMatch, identifyValueBet } from '../../services/api';
 import { useTheme as useNextTheme } from 'next-themes';
@@ -109,6 +109,7 @@ export default function Calculator({ onResultUpdate }) {
             onClick={handleRun}
             isLoading={isLoading}
             loadingText="Calculating"
+            leftIcon={isLoading ? null : <FiActivity />}
           >
             Run Analysis
           </Button>
