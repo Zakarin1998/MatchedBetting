@@ -34,61 +34,6 @@ npm run dev
 npm run build
 ```
 
-### Backend
-
-```bash
-# Crea ambiente virtuale (consigliato)
-cd matched-betting-backend
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# Installa dipendenze
-pip install -r requirements.txt
-
-# Avvia il server
-python app.py
-```
-
-### Avvio Congiunto
-
-Per comodità, è possibile utilizzare gli script:
-- `run_app.bat` (Windows)
-- `run_app.sh` (Linux/Mac)
-
-## Estensioni Future
-
-### 1. Integrazione con Provider Reali
-
-Modificare il modulo `engine/data.py` per integrare API reali:
-- Bookmaker (Bet365, Betfair, ecc.)
-- Provider di statistiche sportive (Opta, Stats Perform)
-
-### 2. Sistema CMS Interno
-
-Sviluppare un sistema di gestione contenuti per:
-- Gestione utenti e ruoli
-- Salvare e caricare previsioni
-- Creare e gestire strategie di betting
-
-### 3. Miglioramenti UI/UX
-
-- Aggiungere visualizzazioni dati più avanzate (grafici interattivi)
-- Implementare dashboard personalizzabili
-- Aggiungere notifiche in tempo reale per opportunità di value betting
-
-### 4. Funzionalità Avanzate
-
-- Modelli ML per previsioni più accurate
-- Integrazione con portafogli elettronici per tracciare le scommesse
-- Analisi ROI e metriche di performance
-
-
-## Features
-
-- Match prediction calculation
-- Value bet identification
-- Integration with betting APIs
-
 ## Panoramica
 
 Il Matched Betting Dashboard è un'applicazione web moderna che fornisce strumenti per l'analisi e la previsione delle scommesse sportive. Il progetto è composto da due componenti principali:
