@@ -14,11 +14,15 @@ import {
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import Card from '../UI/Card';
+import { useTheme as useNextTheme } from 'next-themes';
 
 // Register ChartJS components
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function ResultsDisplay({ result }) {
+  const { theme } = useNextTheme();
+  const isDark = theme === 'dark';
+
   if (!result) {
     return (
       <Alert status="info" borderRadius="md">
@@ -39,8 +43,10 @@ export default function ResultsDisplay({ result }) {
     datasets: [
       {
         data: [0.55, 0.25, 0.2], // Mock data - in a real app this would come from the API
-        backgroundColor: ['#2D3748', '#718096', '#A0AEC0'],
-        borderColor: ['#E2E8F0', '#E2E8F0', '#E2E8F0'],
+        backgroundColor: isDark 
+          ? ['#718096', '#4A5568', '#2D3748'] 
+          : ['#2D3748', '#718096', '#A0AEC0'],
+        borderColor: isDark ? ['#171923', '#171923', '#171923'] : ['#E2E8F0', '#E2E8F0', '#E2E8F0'],
         borderWidth: 1,
       },
     ],
@@ -50,6 +56,9 @@ export default function ResultsDisplay({ result }) {
     plugins: {
       legend: {
         position: 'bottom',
+        labels: {
+          color: isDark ? '#FFFFFF' : '#000000',
+        }
       },
       tooltip: {
         callbacks: {

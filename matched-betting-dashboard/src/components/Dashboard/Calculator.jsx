@@ -5,24 +5,28 @@ import {
   FormLabel,
   Input,
   Stack,
-  useToast,
   Flex,
   Spinner,
+  Box,
 } from '@chakra-ui/react';
 import { FiCalculator } from 'react-icons/fi';
 import Card from '../UI/Card';
 import { predictMatch, identifyValueBet } from '../../services/api';
+import { useTheme as useNextTheme } from 'next-themes';
 
 export default function Calculator({ onResultUpdate }) {
   const [matchId, setMatchId] = useState('Milan-Inter');
   const [providers, setProviders] = useState('Bet365,Betfair');
   const [homeProb, setHomeProb] = useState(0.55);
   const [isLoading, setIsLoading] = useState(false);
-  const toast = useToast();
+  const [error, setError] = useState(null);
+  const { theme } = useNextTheme();
+  const isDark = theme === 'dark';
 
   const handleRun = async () => {
     try {
       setIsLoading(true);
+      setError(null);
       const provArr = providers.split(',').map(p => p.trim());
       
       // Run predictions
@@ -38,32 +42,30 @@ export default function Calculator({ onResultUpdate }) {
         matchId,
         providers: provArr
       });
-
-      toast({
-        title: 'Analysis complete',
-        description: `Successfully analyzed match ${matchId}`,
-        status: 'success',
-        duration: 3000,
-        isClosable: true,
-      });
     } catch (error) {
       console.error('Error running prediction:', error);
-      toast({
-        title: 'Error',
-        description: error.response?.data?.error || 'Failed to run prediction',
-        status: 'error',
-        duration: 5000,
-        isClosable: true,
-      });
+      setError(error.response?.data?.error || 'Failed to run prediction');
     } finally {
       setIsLoading(false);
     }
   };
 
+  // Show error messages if needed
+  const showError = () => {
+    if (error) {
+      return (
+        <Box mt={4} p={3} bg="red.100" color="red.800" borderRadius="md">
+          {error}
+        </Box>
+      );
+    }
+    return null;
+  };
+
   return (
-    <Card
-      id="calculator"
-      mb={6}
+    <Card 
+      id="calculator" 
+      mb={6} 
       title="Match Prediction Calculator"
       subtitle="Enter match details to calculate predictions and value bets"
     >
@@ -98,14 +100,15 @@ export default function Calculator({ onResultUpdate }) {
             placeholder="Enter probability between 0 and 1"
           />
         </FormControl>
-
+        
+        {error && showError()}
+        
         <Flex justify="flex-end">
           <Button
-            colorScheme="blackAlpha"
+            colorScheme={isDark ? "blue" : "blackAlpha"}
             onClick={handleRun}
             isLoading={isLoading}
             loadingText="Calculating"
-            leftIcon={isLoading ? <Spinner size="sm" /> : <FiCalculator />}
           >
             Run Analysis
           </Button>
