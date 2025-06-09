@@ -1,6 +1,12 @@
 # Matched Betting Dashboard - Documentazione Completa
 
-Il nostro Simple Matched Betting Calculator è un framework in versione alpha per eseguire matched betting e value betting tramite bot e strategie.
+Il progetto Matched Betting Calculator è un framework in versione alpha per eseguire matched betting e value betting tramite bot e strategie.
+
+---
+
+A React and Python based fullstack application, with frontend dashboard interacting with a python backend implementing solutions for matched betting predictions and value bet identification.
+
+---
 
 Si tratta di un MVP basato su:
 
@@ -11,53 +17,11 @@ Si tratta di un MVP basato su:
 
 ---
 
-A React and Python based fullstack application, with frontend dashboard interacting with a python backend implementing solutions for matched betting predictions and value bet identification.
+## Features
 
-## 🎯 Estensioni Future e Prossimi Tasks
-
-Comprende varie attività, tra cui
-
-* Integrare API reali (Opta, Bet365)
-* Sostituire i mock in `engine/data.py`
-* Aggiungere web API (FastAPI/Flask) per endpoint `/predict_match` e `/identify_value_bet`
-* Dashboard interattiva con Streamlit o React
-* Persistenza su database (SQLite/PostgreSQL) dei risultati e delle quote
-
-### 1. Integrazione con Provider Reali
-
-Modificare il modulo `engine/data.py` per integrare API reali:
-- Bookmaker (Bet365, Betfair, ecc.)
-- Provider di statistiche sportive (Opta, Stats Perform)
-
-### 2. Sistema CMS Interno
-
-Sviluppare un sistema di gestione contenuti per:
-- Gestione utenti e ruoli
-- Salvare e caricare previsioni
-- Creare e gestire strategie di betting
-
-### 3. Miglioramenti UI/UX
-
-- Aggiungere visualizzazioni dati più avanzate (grafici interattivi)
-- Implementare dashboard personalizzabili
-- Aggiungere notifiche in tempo reale per opportunità di value betting
-
-### 4. Funzionalità Avanzate
-
-- Modelli ML per previsioni più accurate
-- Integrazione con portafogli elettronici per tracciare le scommesse
-- Analisi ROI e metriche di performance
-
-1. **Rifattorizzare `src/App.jsx` e altri file**:
-   - Rimuovere qualsiasi import non necessario
-   - Verificare che tutti i riferimenti ai componenti eliminati siano stati aggiornati
-
-2. **Aggiornare `package.json`**:
-   - Rimuovere dipendenze non utilizzate (es. Chakra UI, se ancora presente)
-
-Questa struttura è più pulita, mantiene solo i componenti attivamente utilizzati.
-Questo rende il progetto più leggibile e manutenibile.
-
+- Match prediction calculation
+- Value bet identification
+- Integration with betting APIs
 
 ### Avvio Congiunto
 
@@ -65,11 +29,24 @@ Per comodità, è possibile utilizzare gli script:
 - `run_app.bat` (Windows)
 - `run_app.sh` (Linux/Mac)
 
-## Features
+### 🧪 Testing e generazione PDF (TDD Inline)
 
-- Match prediction calculation
-- Value bet identification
-- Integration with betting APIs
+Nel `main.py` è presente la funzione di test inline:
+
+```python
+from engine.data import unify_data
+# ...
+# run_tests() chiamata alla fine
+```
+
+Puoi estendere o integrare con pytest/faker per testare:
+
+* `fetch_opta_data`
+* `fetch_betting_odds`
+* `unify_data`
+* `predict_match`
+* `identify_value_bet`
+* Creazione del PDF
 
 ## Panoramica
 
@@ -344,24 +321,51 @@ Il sistema attuale utilizza dati simulati ma è progettato per essere facilmente
 
 Per estensioni future, è consigliabile sviluppare un "CMS" interno che faciliti la gestione dei dati e fornisca un'interfaccia amministrativa per controllare il sistema.
 
-## 🧪 Testing e generazione PDF (TDD Inline)
 
-Nel `main.py` è presente la funzione di test inline:
+## 🎯 Estensioni Future e Prossimi Tasks
 
-```python
-from engine.data import unify_data
-# ...
-# run_tests() chiamata alla fine
-```
+Comprende varie attività, tra cui
 
-Puoi estendere o integrare con pytest/faker per testare:
+* Integrare API reali (Opta, Bet365)
+* Sostituire i mock in `engine/data.py`
+* Aggiungere web API (FastAPI/Flask) per endpoint `/predict_match` e `/identify_value_bet`
+* Dashboard interattiva con Streamlit o React
+* Persistenza su database (SQLite/PostgreSQL) dei risultati e delle quote
 
-* `fetch_opta_data`
-* `fetch_betting_odds`
-* `unify_data`
-* `predict_match`
-* `identify_value_bet`
-* Creazione del PDF
+### 1. Integrazione con Provider Reali
+
+Modificare il modulo `engine/data.py` per integrare API reali:
+- Bookmaker (Bet365, Betfair, ecc.)
+- Provider di statistiche sportive (Opta, Stats Perform)
+
+### 2. Sistema CMS Interno
+
+Sviluppare un sistema di gestione contenuti per:
+- Gestione utenti e ruoli
+- Salvare e caricare previsioni
+- Creare e gestire strategie di betting
+
+### 3. Miglioramenti UI/UX
+
+- Aggiungere visualizzazioni dati più avanzate (grafici interattivi)
+- Implementare dashboard personalizzabili
+- Aggiungere notifiche in tempo reale per opportunità di value betting
+
+### 4. Funzionalità Avanzate
+
+- Modelli ML per previsioni più accurate
+- Integrazione con portafogli elettronici per tracciare le scommesse
+- Analisi ROI e metriche di performance
+
+1. **Rifattorizzare `src/App.jsx` e altri file**:
+   - Rimuovere qualsiasi import non necessario
+   - Verificare che tutti i riferimenti ai componenti eliminati siano stati aggiornati
+
+2. **Aggiornare `package.json`**:
+   - Rimuovere dipendenze non utilizzate (es. Chakra UI, se ancora presente)
+
+Questa struttura è più pulita, mantiene solo i componenti attivamente utilizzati.
+Questo rende il progetto più leggibile e manutenibile.
 
 ---
 
